@@ -8,6 +8,8 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+from random import randrange
+import random
 from random import randrange, sample
 from turtle import *
 
@@ -31,6 +33,19 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+def move_food():
+    """Mover la comida al azar un paso a la vez dentro de los límites."""
+    opciones = [vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)]
+    paso = random.choice(opciones)
+    
+    # Intentamos mover la comida
+    food.move(paso)
+    
+    # Si se sale de los límites de la ventana, revertimos el movimiento
+    if not inside(food):
+        food.move(-paso)
+
+
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
@@ -49,6 +64,9 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+
+    # Hacemos que la comida también se mueva un paso al azar en cada ciclo
+    move_food()
 
     clear()
 
