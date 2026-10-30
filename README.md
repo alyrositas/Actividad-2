@@ -5,6 +5,7 @@ Continuar con una aplicación que implica una inteligencia muy sencilla conocida
 ## Funcionalidades implementadas
 
 - **Colores:** Se agregó que cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo
+- **Movimiento:** Se agregó que la comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana.
 
 ## Instrucciones de ejecución
 
